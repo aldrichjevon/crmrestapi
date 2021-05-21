@@ -1,0 +1,20 @@
+{
+  "name": "crmrestapi",
+  "version": "1.0.0",
+  "description": "rest api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\u0016\u0016https://github.com/aldrichjevon/crmrestapi.git"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "node.js"
+  ],
+  "author": "Jevon",
+  "license": "ISC"
+}
