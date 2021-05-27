@@ -1,0 +1,11 @@
+# runtime: nodejs
+# env: flex
+
+# env_variables:
+#   SQL_USER: root
+#   SQL_PASSWORD: "amin15"
+#   SQL_DATABASE: crmsys
+#   INSTANCE_CONNECTION_NAME: crm-new-project:asia-southeast2:crmreports
+
+# beta_settings:
+#   cloud_sql_instances: crm-new-project:asia-southeast2:crmreports

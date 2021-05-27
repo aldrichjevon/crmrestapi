@@ -1,5 +1,5 @@
 'use strict';
-
+require('dotenv').config()
 var response = require('./res');
 var connection = require('./connection');
 
@@ -9,7 +9,7 @@ exports.index = function(req,res){
 
 //Get data
 exports.getdata = function(req, res){
-    connection.query('SELECT * FROM report', 
+    connection.query('SELECT * FROM reports', 
         function(error, rows, fields){
             if(error){
                 connection.log(error);
@@ -22,7 +22,7 @@ exports.getdata = function(req, res){
 //Get data using Id
 exports.getdataid = function(req, res){
     let id = req.params.id;
-    connection.query('SELECT * FROM report WHERE id_laporan = ?', [id],
+    connection.query('SELECT * FROM reports WHERE id_laporan = ?', [id],
         function(error, rows, fields){
             if(error){
                 console.log(error);
@@ -45,7 +45,7 @@ exports.postdata = function(req, res){
     var id_kecamatan = req.body.id_kecamatan;
     var createdat = req.body.createdat;
 
-    connection.query('INSERT INTO report (kategori, sub_kategori, deskripsi, latitude, longitude, foto, id_kecamatan) VALUES(?,?,?,?,?,?,?)',
+    connection.query('INSERT INTO reports (kategori, sub_kategori, deskripsi, latitude, longitude, foto, id_kecamatan) VALUES(?,?,?,?,?,?,?)',
         [kategori, sub_kategori, deskripsi, latitude, longitude, foto, id_kecamatan],
         function(error, rows, fields){
             if(error){
