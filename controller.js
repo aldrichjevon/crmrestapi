@@ -32,6 +32,42 @@ exports.getdataid = function(req, res){
         });
 };
 
+//Filter data report jalan
+exports.getdatajalan = function(req, res){
+    connection.query("SELECT * FROM reports WHERE kategori = 'Jalan';",
+        function(error, rows, fields){
+            if(error){
+                console.log(error);
+            }else {
+                response.ok(rows, res);
+            }
+        });
+};
+
+//Filter data report pohon
+exports.getdatapohon = function(req, res){
+    connection.query("SELECT * FROM reports WHERE kategori = 'Pohon';", 
+        function(error, rows, fields){
+            if(error){
+                console.log(error);
+            }else {
+                response.ok(rows, res);
+            }
+        });
+};
+
+//Filter data report sampah
+exports.getdatasampah = function(req, res){
+    connection.query("SELECT * FROM reports WHERE kategori = 'Sampah';",
+        function(error, rows, fields){
+            if(error){
+                console.log(error);
+            }else {
+                response.ok(rows, res);
+            }
+        });
+};
+
 //Post data report
 exports.postdata = function(req, res){
     var id_laporan = req.body.id_laporan;
@@ -52,6 +88,19 @@ exports.postdata = function(req, res){
                 console.log(error);
             }else {
                 response.ok("Data berhasil ditambahkan", res)
+            }
+        });
+};
+
+// Update vote
+exports.updatevote = function(req, res){
+    let id = req.params.id;
+    connection.query(`UPDATE reports SET vote = vote + 1 WHERE id_laporan = ?`, [id],
+        function(error, rows, fields){
+            if(error){
+                console.log(error);
+            }else {
+                response.ok(rows, res);
             }
         });
 };

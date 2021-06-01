@@ -13,5 +13,5 @@ routes(app);
 app.get('/status', (req, res) => res.send('Working!'));
 
 // Port 8080 for Google App Engine
-app.set('port', process.env.PORT || 3001);
-app.listen(3001);
+app.set('port', 8080);
+app.listen(8080);
